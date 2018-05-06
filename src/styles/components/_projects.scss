@@ -1,0 +1,170 @@
+.ml7 {
+  position: relative;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: black;
+  color: white;
+}
+
+.ml7 .text-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.ml7 .letter {
+  transform-origin: 0 100%;
+  display: inline-block;
+  line-height: 1em;
+}
+
+.Projets {
+  margin-top: 150Px;
+  width: 100%;
+  display: flex;
+  height: 750px;
+  @include for-size (desktop-up) {
+    margin-top: 200Px;
+    height: 500px;
+  }
+
+  &__Right {
+    width: 100%;
+    @include for-size (desktop-up) {
+      width: 30%;
+    }
+  }
+
+  &__More {
+    width: 100%;
+    height: 230px;
+    background-color: #1C1B1B;
+    display: flex;
+    font-family: 'Boogaloo', cursive;
+    justify-content: center;
+    align-items: center;
+    @include for-size (desktop-up) {
+      height: 220px;
+      width: 100%;
+    }
+
+    & > p {
+      font-size: 16px;
+      @include for-size (desktop-up) {
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+.contain {
+  height: 400px;
+  width: 100%;
+  @include for-size (desktop-up) {
+    display: flex;
+  }
+}
+
+.contain .box {
+  width: 100%;
+  text-decoration: none;
+  background-repeat: no-repeat;
+  background-size: 110%;
+  background-position: 50% 50%;
+  transition: background-size 1s ease-out;
+  flex-grow: 1;
+  cursor: pointer;
+  user-select: none;
+  @include for-size (desktop-up) {
+    background-size: 100%;
+    width: 70%;
+  }
+}
+
+.contain .box:hover {
+  background-size: 102%;
+}
+
+.contain .box:nth-of-type(1) {
+  background-image: url("https://i.imgur.com/OWxpJR2.jpg");
+}
+
+.contain .Projets__Right .box {
+  background-image: url("https://i.imgur.com/zxBZzch.png");
+  @include for-size (desktop-up) {
+    width: 100%;
+  }
+}
+
+.box-info {
+  background: rgba(35, 35, 35, 0.7);
+  box-sizing: border-box;
+  height: 230px;
+  width: 100%;
+  transition: opacity 0.45s ease-in-out;
+  padding-top: 120px;
+  padding-left: 20px;
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 30px;
+  font-family: 'Ubuntu', sans-serif;
+  color: #fff;
+  opacity: 0;
+  @include for-size (desktop-up) {
+    height: 500px;
+  }
+
+  & > p {
+    text-decoration: none;
+  }
+}
+
+.box-info2 {
+  background: rgba(35, 35, 35, 0.7);
+  box-sizing: border-box;
+  height: 230px;
+  width: 100%;
+  transition: opacity 0.45s ease-in-out;
+  padding: 20% 0 0;
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 30px;
+  text-align: center;
+  font-family: 'Ubuntu', sans-serif;
+  color: #fff;
+  opacity: 0;
+  @include for-size (desktop-up) {
+    text-align: left;
+    padding-top: 320px;
+    padding-left: 40px;
+    font-size: 48px;
+    height: 500px;
+  }
+
+  & > p {
+    text-decoration: none;
+  }
+}
+
+.box-info:nth-of-type(1) {
+  height: 220px;
+  @include for-size (desktop-up) {
+    height: 180px;
+  }
+}
+
+.box-info2:nth-of-type(1) {
+  height: 220px;
+  @include for-size (desktop-up) {
+    height: 400px;
+  }
+}
+
+.contain .box .box-info:hover {
+  opacity: 1;
+}
+
+.contain .box .box-info2:hover {
+  opacity: 1;
+}

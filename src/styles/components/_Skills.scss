@@ -1,0 +1,54 @@
+.Competences {
+  font-family: 'Boogaloo', cursive;
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  width: 70%;
+  @include for-size (desktop-up) {
+    font-size: 48px;
+    text-align: center;
+  }
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: black;
+}
+
+.Skills {
+  margin-left: 32px;
+  width: 100%;
+  background-color: black;
+  display: flex;
+  margin-top: 100px;
+  flex-direction: column;
+  margin-bottom: 200px;
+  @include for-size (desktop-up) {
+    flex-direction: row;
+    margin-top: 100px;
+    justify-content: space-around;
+  }
+
+  &__Item {
+    width: 60%;
+    display: flex;
+    margin-top: 40px;
+    font-family: 'Boogaloo', cursive;
+    flex-direction: column;
+    justify-content: center;
+    @include for-size (desktop-up) {
+      width: 30%;
+    }
+
+    & > p {
+      font-size: 24px;
+      @include for-size (desktop-up) {
+        font-size: 24px;
+        padding-top: 40px;
+      }
+    }
+  }
+}
