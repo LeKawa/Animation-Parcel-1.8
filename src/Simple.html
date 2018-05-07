@@ -31,16 +31,67 @@
   <section class="Simple">
     <div class="Simple__Title">
       <h3>Simpl.e</h3>
-    </div>
-    <div class="Simple__Description">
-      <p>Simpl.e est à la base une solution proposé pour la problématique suivante : Comment améliorer l'expérience utilisateur dans un site autour de la cigarette électronique ?</p>
+      <div class="Simple__Description">
+        <p>Simpl.e est à la base une solution proposé pour la problématique suivante : Comment améliorer l'expérience utilisateur dans un site autour de la cigarette électronique ?</p>
+      </div>
     </div>
     <div class="Simple__FirstImage">
       <img src="./img/projet1.png" alt="Simple">
     </div>
   </section>
+  <div class="Sdescription">
+    <p> Notre Objectif était simple : Simplifier au maximum les choix et rendre les cigarettes électronique à la portée de tout le monde plus que ça ne l'est déjà</p>
+  </div>
+  <div class="Simage">
+    <img src="./img/1.png" alt="" class="Last">
+    <img src="./img/2.png" alt="" class="Last">
+    <img src="./img/3.png" alt="" class="Last">
+  </div>
+  <div class="Next">
+    <a href="#">Projet suivant</a>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js">
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="index.js">
+  </script>
+  <script>
+    $('.burger, .overlay, .Link').click(function() {
+      $('.burger').toggleClass('clicked');
+      $('.overlay').toggleClass('show');
+      $('nav').toggleClass('show');
+      $('body').toggleClass('overflow');
+
+    });
 
 
+    // Wrap every letter in a span
+    $('.ml7 .letters').each(function() {
+      $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+    });
+
+    anime.timeline({
+        loop: true
+      })
+      .add({
+        targets: '.ml7 .letter',
+        translateY: ["1.1em", 0],
+        translateX: ["0.55em", 0],
+        translateZ: 0,
+        rotateZ: [180, 0],
+        duration: 750,
+        easing: "easeOutExpo",
+        delay: function(el, i) {
+          return 50 * i;
+        }
+      }).add({
+        targets: '.ml7',
+        opacity: 0,
+        duration: 1000,
+        easing: "easeOutExpo",
+        delay: 5000
+      });
+  </script>
 </body>
 
 </html>
