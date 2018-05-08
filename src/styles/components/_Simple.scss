@@ -30,7 +30,7 @@
     @include for-size (desktop-up) {
       width: 80%;
       font-weight: 200;
-      font-size: 24px;
+      font-size: 20px;
     }
   }
 
@@ -59,9 +59,52 @@
   line-height: 150%;
   width: 80%;
   margin-left: 32px;
+  @include for-size (desktop-up) {
+    margin-bottom: 100Px;
+  }
+
+
+  & > h3 {
+    padding-bottom: 50px;
+    font-family: 'Boogaloo', cursive;
+    font-size: 40px;
+    @include for-size (desktop-up) {
+      font-size: 48px;
+    }
+  }
+  @include for-size (desktop-up) {
+    font-size: 20px;
+    width: 40%;
+    margin-top: 100Px;
+    line-height: 200%;
+  }
 }
 
 .Simage {
+  display: flex;
+  margin-right: 32px;
+  margin-left: 32px;
+
+  &__Item {
+    width: 50%;
+
+    & > img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__Item2 {
+    margin-right: 32px;
+    margin-left: 32px;
+    margin-top: 50px;
+
+    & > img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
   & > img {
     width: 100%;
     height: auto;
@@ -81,16 +124,70 @@
   & > a {
     color: white;
     text-decoration: none;
-    padding-bottom: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 20px;
+    transition: all 0.4s ease-out;
+    padding: 20px;
+
+    &:hover {
+      opacity: 0.7;
+    }
   }
 }
 
 .Last {
   margin-bottom: 50px;
   @include for-size (desktop-up) {
-    margin-bottom: 0px;
+    margin-bottom: 100px;
+  }
+}
+
+.Mimage {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 32px;
+  margin-left: 32px;
+
+  &__Item {
+    width: 50%;
+    @include for-size (desktop-up) {
+      width: 50%;
+    }
+
+    & > img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__Item2 {
+    margin-right: 32px;
+    margin-left: 32px;
+    margin-top: 50px;
+    @include for-size (desktop-up) {
+      margin-top: 0;
+      width: 33%;
+    }
+
+    & > img {
+      width: 100%;
+      height: auto;
+      @include for-size (desktop-up) {
+        width: 100%;
+      }
+    }
+  }
+
+  & > img {
+    width: 100%;
+    height: auto;
+    @include for-size (desktop-up) {
+      width: 33%;
+    }
+  }
+}
+
+.Display {
+  display: block;
+  @include for-size (desktop-up) {
+    display: flex;
   }
 }
