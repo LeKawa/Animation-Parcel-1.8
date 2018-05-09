@@ -114,6 +114,10 @@ body {
   @include for-size (desktop-up) {
     height: 500px;
   }
+  & > a {
+    text-decoration: none;
+    color: white;
+  }
 
   & > p {
     text-decoration: none;
@@ -140,6 +144,10 @@ body {
     padding-left: 40px;
     font-size: 48px;
     height: 500px;
+  }
+  & > a {
+    text-decoration: none;
+    color: white;
   }
 
   & > p {
