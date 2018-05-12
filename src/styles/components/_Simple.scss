@@ -63,7 +63,6 @@
     margin-bottom: 100Px;
   }
 
-
   & > h3 {
     padding-bottom: 50px;
     font-family: 'Boogaloo', cursive;
@@ -190,4 +189,15 @@
   @include for-size (desktop-up) {
     display: flex;
   }
+}
+
+.slide-in {
+  opacity: 0;
+  transform: translateY(-80px);
+  transition: all 1s;
+}
+
+.slide-in.active {
+  transform: translateY(0px);
+  opacity: 1;
 }

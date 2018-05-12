@@ -1,0 +1,27 @@
+.Contact {
+  height: 150px;
+  background-color: red;
+  position: fixed;
+  width: 100%;
+  z-index: -1;
+  display: block;
+  bottom: 0;
+
+  &__Title {
+    margin-left: 32px;
+    font-size: 24px;
+    font-family: 'Boogaloo', cursive;
+    @include for-size (desktop-up) {
+      font-size: 32px;
+    }
+  }
+  &__Reseaux {
+    
+  }
+}
+
+.Main {
+  background-color: black;
+  z-index: 100;
+  margin-bottom: 150px;
+}
