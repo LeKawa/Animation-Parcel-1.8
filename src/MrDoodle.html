@@ -12,6 +12,8 @@
   <meta name="description" content="Bonjour à toi, je suis Hector Travaillé un UX / UI designer...">
   <meta property="og:site_name" content="HectorTravaillé">
   <link href="https://fonts.googleapis.com/css?family=Boogaloo" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
   <title>HectorTravaillé-Portfolio</title>
 </head>
@@ -43,22 +45,28 @@
     <h3>- Simpl.e</h3>
     <p> Notre Objectif était simple : Simplifier au maximum les choix et rendre les cigarettes électronique à la portée de tout le monde plus que ça ne l'est déjà</p>
   </div>
-  <div class="Display">
-    <div class="Mimage">
-      <div class="Mimage__Item">
-        <img src="./img/12.png" alt="" class="Last">
-      </div>
-      <div class="Mimage__Item">
-        <img src="./img/13.png" alt="" class="Last">
-      </div>
-    </div>
-    <div class="Mimage__Item2">
-      <img src="./img/14.png" alt="" class="Last">
-    </div>
-  </div>
   <div class="Next">
     <a href="Simple.html">Projet suivant</a>
   </div>
+  <div class="items">
+    <div class="item item1">
+      <img src="img/12.png" alt="">
+    </div>
+    <div class="item item2">
+      <img src="img/13.png" alt="">
+    </div>
+    <div class="item item3">03</div>
+    <div class="item item4">04</div>
+    <div class="item item5">05</div>
+    <div class="item item6">06</div>
+    <div class="item item7">07</div>
+    <div class="item item8">08</div>
+    <div class="item item9">09</div>
+    <div class="item item10">10</div>
+    <div class="item item11">11</div>
+    <div class="item item12">12</div>
+  </div>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js">
   </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -100,6 +108,48 @@
         easing: "easeOutExpo",
         delay: 5000
       });
+
+
+    const slider = document.querySelector('.items'); //selecting white div that surrounds everything
+
+    //variables that we'll be updating
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    slider.addEventListener('mousedown', (e) => {
+      isDown = true;
+      slider.classList.add('active');
+      startX = e.pageX - slider.offsetLeft; //finding the place where the user initially clicked
+      scrollLeft = slider.scrollLeft;
+    });
+
+    slider.addEventListener('mouseleave', () => {
+      isDown = false;
+      slider.classList.remove('active');
+    });
+
+    slider.addEventListener('mouseup', () => {
+      isDown = false;
+      slider.classList.remove('active');
+    });
+
+    slider.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - slider.offsetLeft;
+      const walk = (x - startX) * 3;
+      slider.scrollLeft = scrollLeft - walk;
+    });
+
+
+    var e = document.querySelector(".image-big")
+
+    window.addEventListener("scroll", () => (
+      e.style.marginTop = (window.pageYOffset / 2) + "px"
+    ));
+
+
   </script>
 </body>
 

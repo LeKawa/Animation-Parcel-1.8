@@ -12,6 +12,8 @@
   <meta name="description" content="Bonjour à toi, je suis Hector Travaillé un UX / UI designer...">
   <meta property="og:site_name" content="HectorTravaillé">
   <link href="https://fonts.googleapis.com/css?family=Boogaloo" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
   <title>HectorTravaillé-Portfolio</title>
 </head>
@@ -39,24 +41,58 @@
       <img src="./img/projet1.png" alt="Simple">
     </div>
   </section>
-  <div class="Sdescription">
-    <h3>- Simpl.e</h3>
-    <p> Notre Objectif était simple : Simplifier au maximum les choix et rendre les cigarettes électronique à la portée de tout le monde plus que ça ne l'est déjà</p>
-  </div>
-  <div class="Simage">
-    <div class="Simage__Item">
-      <img src="./img/1.png" alt="" class="Last">
+  <section class="Simple">
+    <div class="Simple__Title">
+      <h3>- Simpl.e</h3>
+      <div class="Simple__Description">
+        <p>Simpl.e est à la base une solution proposé pour la problématique suivante : Comment améliorer l'expérience utilisateur dans un site autour de la cigarette électronique ?</p>
+      </div>
     </div>
-    <div class="Simage__Item">
-      <img src="./img/2.png" alt="" class="Last">
+    <div class="Simple__FirstImage2">
+      <img src="./img/Simple1.jpg" alt="Simple">
     </div>
+  </section>
+  <section class="Moodboard">
+    <div class="Moodboard__Title">
+      <p>Choix couleur | typo</p>
+    </div>
+    <div class="Moodboard__Color">
+      <div class="Moodboard__1">
+      </div>
+      <div class="Moodboard__2">
+      </div>
+      <div class="Moodboard__3">
+      </div>
+      <div class="Moodboard__4">
+      </div>
+    </div>
+    <div class="Moodboard__Typo">
+      <p>Raleway</p>
+      <p>Raleway</p>
+      <p>Raleway</p>
+      <p>Raleway</p>
+    </div>
+    <div class="Moodboard__Typo2">
+      <p>Montserrat</p>
+      <p>Montserrat</p>
+      <p>Montserrat</p>
+      <p>Montserrat</p>
+    </div>
+  </section>
+  <div class="items">
+    <div class="item item1"><img src="img/1.png" alt=""></div>
+    <div class="item item2"><img src="img/2.png" alt=""></div>
+    <div class="item item3"><img src="img/3.png" alt=""></div>
+    <div class="item item4"><img src="img/chemin.png" alt=""></div>
+    <div class="item item5"><img src="img/4.jpg" alt=""></div>
   </div>
-  <div class="Simage__Item2">
-    <img src="./img/2.png" alt="" class="Last">
-  </div>
-  <div class="Next">
-    <a href="MrDoodle.html">Projet suivant</a>
-  </div>
+  <section class="Next">
+    <a class="Next__Item" href="MrDoodle.html">
+      <div class="Next__Info">
+        <p>Projet Suivant <br>Mr.Doodle </p>
+      </div>
+    </a>
+  </section>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js">
   </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -68,11 +104,9 @@
       $('.overlay').toggleClass('show');
       $('nav').toggleClass('show');
       $('body').toggleClass('overflow');
-
     });
 
 
-    // Wrap every letter in a span
     $('.ml7 .letters').each(function() {
       $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
     });
@@ -98,6 +132,36 @@
         easing: "easeOutExpo",
         delay: 5000
       });
+
+    const slider = document.querySelector('.items');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    slider.addEventListener('mousedown', (e) => {
+      isDown = true;
+      slider.classList.add('active');
+      startX = e.pageX - slider.offsetLeft;
+      scrollLeft = slider.scrollLeft;
+    });
+
+    slider.addEventListener('mouseleave', () => {
+      isDown = false;
+      slider.classList.remove('active');
+    });
+
+    slider.addEventListener('mouseup', () => {
+      isDown = false;
+      slider.classList.remove('active');
+    });
+
+    slider.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - slider.offsetLeft;
+      const walk = (x - startX) * 2;
+      slider.scrollLeft = scrollLeft - walk;
+    });
   </script>
 </body>
 

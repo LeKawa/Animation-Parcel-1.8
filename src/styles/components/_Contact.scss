@@ -1,6 +1,6 @@
 .Contact {
   height: 150px;
-  background-color: red;
+  background-color: #1C1B1B;
   position: fixed;
   width: 100%;
   z-index: -1;
@@ -8,6 +8,7 @@
   bottom: 0;
 
   &__Title {
+    margin-top: 32px;
     margin-left: 32px;
     font-size: 24px;
     font-family: 'Boogaloo', cursive;
@@ -15,8 +16,39 @@
       font-size: 32px;
     }
   }
+
+  &__Social {
+    display: flex;
+  }
+
+  &__Mail {
+    margin-left: 32px;
+
+    & > a {
+      text-decoration: none;
+      color: white;
+      transition: all 0.4s ease-out;
+      font-size: 18px;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
   &__Reseaux {
-    
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+  }
+
+  &__Item {
+    width: 10%;
+
+    & > svg {
+      width: 100%;
+      height: auto;
+    }
   }
 }
 
@@ -24,4 +56,12 @@
   background-color: black;
   z-index: 100;
   margin-bottom: 150px;
+}
+
+path {
+  transition: all 0.2s;
+
+  &:hover {
+    fill: blue;
+  }
 }

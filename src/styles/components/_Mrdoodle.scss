@@ -1,0 +1,41 @@
+.items {
+  margin-top: 50Px;
+  height: 200px;
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  user-select: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  will-change: transform;
+  position: relative;
+  font-size: 0;
+  @include for-size (desktop-up) {
+    height: 300px;
+    margin-top: 100px;
+  }
+}
+
+.items.active {
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+}
+
+.item {
+  width: 200px;
+  height: calc(100% - 40px);
+  display: inline-flex;
+  margin-right: 50px;
+  align-items: center;
+  justify-content: center;
+  @include for-size (desktop-up) {
+    margin-right: 75px;
+    width: 350px;
+  }
+
+  & > img {
+    width: 100%;
+    height: auto;
+  }
+}
