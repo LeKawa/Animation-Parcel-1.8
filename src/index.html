@@ -10,10 +10,9 @@
   <meta property="og:description" content="Bonjour à toi, je suis Hector Travaillé un UX / UI designer..">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="description" content="Bonjour à toi, je suis Hector Travaillé un UX / UI designer...">
+    <link rel="icon" href="img/ok.png" />
   <meta property="og:site_name" content="HectorTravaillé">
   <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400i,700" rel="stylesheet">
-
-
   <title>HectorTravailléPortfolio</title>
 </head>
 
@@ -33,7 +32,7 @@
   <div class="overlay"></div>
   <div class="items">
     <div class="item item1">
-      <a class="ok" href="#">
+      <a class="ok" href="MrDoodle.html">
         <p>Mr.Doodle <br>
           <span>- e.shop</span>
         </p>
@@ -46,32 +45,36 @@
       </a>
     </div>
     <div class="item item1">
-      <a class="ok" href="Simple.html">
-        <p>Simpl.e <br>
-          <span>- e.shop</span></p>
+      <a class="ok" href="minecraft.html">
+        <p>Minecraft <br>
+          <span>- 3d</span></p>
       </a>
     </div>
     <div class="item item1"></div>
     <div class="item item1"></div>
   </div>
-  <div class="loading-page">
-    <div class="counter">
-      <p>Hector Travaillé</p>
-      <h1>0%
+  <section class="loaded">
+    <div class="loading-page">
+      <div class="counter">
+        <p>Hector Travaillé</p>
+        <h1>0%
         <!--
         h1.abs loading
         h1.abs.color loading
         -->
       </h1>
-      <hr/>
+        <hr/>
+      </div>
     </div>
-  </div>
+  </section>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js">
   </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="index.js">
   </script>
   <script>
+
+
     $('.burger, .overlay, .Link').click(function() {
       $('.burger').toggleClass('clicked');
       $('.overlay').toggleClass('show');
@@ -201,7 +204,7 @@
     });
 
 
-    var loaded = document.querySelector('.loading-page');
+    var loaded = document.querySelector('.loaded');
     var tid = setInterval(function() {
       //called 5 times each time after one second
       //before getting cleared by below timeout.

@@ -8,7 +8,9 @@
   cursor: pointer;
   transform: scale(0.99);
   transition: all 0.2s;
+  background-color: #0d0d0d;
   will-change: transform;
+  filter: blur(0px);
   position: relative;
   font-size: 0;
   @include for-size (desktop-up) {
@@ -35,7 +37,6 @@
   }
 
   &:hover {
-    border-radius: 32.5%;
     opacity: 0.7;
   }
 
@@ -60,7 +61,7 @@
     background-size: 100%;
     background-position: 50% 50%;
     background-repeat: no-repeat;
-    background-image: url("https://i.imgur.com/OWxpJR2.jpg");
+    background-image: url("https://i.imgur.com/gviS2fg.jpg");
   }
 
   & > img {
@@ -127,7 +128,6 @@
 
     &:hover {
       opacity: 0.6;
-
     }
   }
 }
