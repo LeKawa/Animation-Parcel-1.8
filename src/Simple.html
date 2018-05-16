@@ -11,22 +11,24 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="description" content="Bonjour à toi, je suis Hector Travaillé un UX / UI designer...">
   <meta property="og:site_name" content="HectorTravaillé">
-  <link href="https://fonts.googleapis.com/css?family=Boogaloo" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400i,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-  <title>HectorTravaillé-Portfolio</title>
+  <title>HectorTravailléPortfolio</title>
 </head>
 
 <body>
+  <div class="fixed">
+    <a href="index.html">Retour</a>
+  </div>
   <div class="burger">
     <span class="menu">Menu</span>
   </div>
   <nav>
     <ul class="main">
-      <li><a href="index.html/#Apropos">Qui suis-je ?</a></li>
-      <li><a href="index.html/#Projets">Mes Projets</a></li>
-      <li><a href="index.html/#Contact">Contacter moi</a></li>
+      <li><a href="#">Qui suis-je ?</a></li>
+      <li><a href="index.html">Mes Projets</a></li>
     </ul>
   </nav>
   <div class="overlay"></div>
@@ -46,10 +48,16 @@
       <h3>- Simpl.e</h3>
       <div class="Simple__Description">
         <p>Simpl.e est à la base une solution proposé pour la problématique suivante : Comment améliorer l'expérience utilisateur dans un site autour de la cigarette électronique ?</p>
+        <p>Notre cheminement a été le suivant : </p>
+        <p>1. Le marché de la cigarette électronique est en pleine concurrence depuis son essort.</p>
+        <p>2. Il y a trop d'information dans ce secteur et pas de standards ou de produits qui se détachent.</p>
+        <p>3. Désinteret de la part de potentiel nouveaux clients qui vont prendre une E-cigarette dans un magasin et non sur Internet</p>
+        <p>La conception d'un système de configuration de cigarette électronique pourrait faire en sorte que l'utilisateur soit un véritable acteur dans sa conception.</p>
+        <p>Cette expérience apporte ainsi un renouveau sur le marché , deplus l'ajout d'un petit guide à votre droite est fait pour que l'utilisateur qui ne connait rien soit directement informé en un temps records</p>
       </div>
     </div>
     <div class="Simple__FirstImage2">
-      <img src="./img/Simple1.jpg" alt="Simple">
+      <img src="./img/Simple1.jpg" alt="Simple" class="slide-in">
     </div>
   </section>
   <section class="Moodboard">
@@ -79,13 +87,6 @@
       <p>Montserrat</p>
     </div>
   </section>
-  <div class="items">
-    <div class="item item1"><img src="img/1.png" alt=""></div>
-    <div class="item item2"><img src="img/2.png" alt=""></div>
-    <div class="item item3"><img src="img/3.png" alt=""></div>
-    <div class="item item4"><img src="img/chemin.png" alt=""></div>
-    <div class="item item5"><img src="img/4.jpg" alt=""></div>
-  </div>
   <section class="Next">
     <a class="Next__Item" href="MrDoodle.html">
       <div class="Next__Info">
@@ -93,8 +94,6 @@
       </div>
     </a>
   </section>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js">
-  </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="index.js">
   </script>
@@ -104,36 +103,48 @@
       $('.overlay').toggleClass('show');
       $('nav').toggleClass('show');
       $('body').toggleClass('overflow');
+
     });
 
 
-    $('.ml7 .letters').each(function() {
-      $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
-    });
+    function debounce(func, wait = 20, immediate = true) {
+      var timeout;
+      return function() {
+        var context = this,
+          args = arguments;
+        var later = function() {
+          timeout = null;
+          if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+      };
+    };
 
-    anime.timeline({
-        loop: true
-      })
-      .add({
-        targets: '.ml7 .letter',
-        translateY: ["1.1em", 0],
-        translateX: ["0.55em", 0],
-        translateZ: 0,
-        rotateZ: [180, 0],
-        duration: 750,
-        easing: "easeOutExpo",
-        delay: function(el, i) {
-          return 50 * i;
+
+    const sliderImages = document.querySelectorAll('.slide-in');
+
+    function checkSlide(e) {
+      sliderImages.forEach(sliderImage => {
+        const slidInAt = (window.scrollY + window.innerHeight) - sliderImage.height / 2;
+        const imageBottom = sliderImage.offsetTop + sliderImage.height;
+        const isHalfShown = slidInAt > sliderImage.offsetTop;
+        const isNotScrollPast = window.scrollY < imageBottom;
+        if (isHalfShown && isNotScrollPast) {
+          sliderImage.classList.add('active');
+        } else {
+          sliderImage.classList.remove('avtive');
         }
-      }).add({
-        targets: '.ml7',
-        opacity: 0,
-        duration: 1000,
-        easing: "easeOutExpo",
-        delay: 5000
       });
+    }
 
-    const slider = document.querySelector('.items');
+    window.addEventListener('scroll', checkSlide);
+
+    const slider = document.querySelector('.items'); //selecting white div that surrounds everything
+
+    //variables that we'll be updating
     let isDown = false;
     let startX;
     let scrollLeft;
@@ -141,7 +152,7 @@
     slider.addEventListener('mousedown', (e) => {
       isDown = true;
       slider.classList.add('active');
-      startX = e.pageX - slider.offsetLeft;
+      startX = e.pageX - slider.offsetLeft; //finding the place where the user initially clicked
       scrollLeft = slider.scrollLeft;
     });
 
@@ -156,12 +167,23 @@
     });
 
     slider.addEventListener('mousemove', (e) => {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - slider.offsetLeft;
-      const walk = (x - startX) * 2;
+      if (!isDown) return; //stop the function from running
+      e.preventDefault(); //that will stop selecting the text that is inside or any of the sliding to the left
+      const x = e.pageX - slider.offsetLeft; //where the cursor is when user moved it to left/right
+      const walk = (x - startX) * 1; //for every pixel moved, you're gonna scroll the slider 3 pixels
       slider.scrollLeft = scrollLeft - walk;
     });
+
+
+
+    // var e = document.querySelector(".Simple__FirstImage2")
+    //
+    // window.addEventListener("scroll", () => (
+    //   e.style.marginTop = (window.pageYOffset / 2) + "px"
+    // ));
+
+
+
   </script>
 </body>
 

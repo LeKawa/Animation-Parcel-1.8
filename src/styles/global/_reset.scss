@@ -17,6 +17,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block; }
 
 body {
+  background-color: black;
   line-height: 1; }
 
 ol, ul {
@@ -38,3 +39,17 @@ q {
 table {
   border-collapse: collapse;
   border-spacing: 0; }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+
+}
+
+::-webkit-scrollbar-track {
+    background: #000;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #fff;
+}

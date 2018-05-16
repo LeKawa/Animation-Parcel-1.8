@@ -1,6 +1,437 @@
-.items {
-  margin-top: 50Px;
-  height: 200px;
+.MrDoodle {
+  display: block;
+  background-color: black;
+  color: white;
+  animation-name: transi;
+  animation-duration: 1.5s;
+  @include for-size (desktop-up) {
+    display: flex;
+    width: 100%;
+  }
+
+  &__Title {
+    padding-top: 100Px;
+    margin-left: 32px;
+    font-size: 40px;
+    font-family: $MainFont;
+    @include for-size (desktop-up) {
+      font-size: 48px;
+      padding-top: 190Px;
+      width: 50%;
+      display: block;
+    }
+  }
+
+  &__Description {
+    width: 90%;
+    font-family: $SecondFont;
+    margin-top: 50px;
+    font-weight: 400;
+    line-height: 200%;
+    font-size: 14px;
+    @include for-size (desktop-up) {
+      width: 80%;
+      font-weight: 200;
+      font-size: 20px;
+    }
+
+    & > p {
+      &:nth-child(9n+1) {
+        padding-bottom: 20px;
+      }
+
+      &:nth-child(9n+3) {
+        padding-top: 20px;
+        font-size: 16px;
+        line-height: 150%;
+      }
+
+      &:nth-child(9n+4) {
+        padding-top: 20px;
+        font-size: 16px;
+        line-height: 150%;
+      }
+
+      &:nth-child(9n+5) {
+        padding-top: 20px;
+        font-size: 16px;
+        line-height: 150%;
+      }
+
+      &:nth-child(9n+6) {
+        padding-top: 20px;
+        font-size: 16px;
+        line-height: 150%;
+      }
+
+      &:nth-child(9n+7) {
+        padding-top: 20px;
+        font-size: 16px;
+        line-height: 150%;
+      }
+    }
+  }
+
+  &__FirstImage {
+    margin-top: 50Px;
+    width: 100%;
+    @include for-size (desktop-up) {
+      margin-top: 190Px;
+      margin-right: 32px;
+      width: 50%;
+    }
+
+    & > img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.Mdescription {
+  font-family: $SecondFont;
+  font-weight: 500;
+  margin-bottom: 50px;
+  font-size: 14px;
+  margin-top: 50px;
+  line-height: 150%;
+  width: 80%;
+  @include for-size (desktop-up) {
+    margin-bottom: 100Px;
+    width: 100%;
+    display: flex;
+  }
+
+  &__Display {
+    display: block;
+    padding-left: 32px;
+    width: 100%;
+    @include for-size (desktop-up) {
+      width: 50%;
+    }
+
+    & > h3 {
+      padding-bottom: 50px;
+      font-family: $MainFont;
+      font-size: 40px;
+      @include for-size (desktop-up) {
+        font-size: 48px;
+      }
+    }
+  }
+  @include for-size (desktop-up) {
+    font-size: 20px;
+    margin-top: 100Px;
+    line-height: 200%;
+  }
+}
+
+.Simage {
+  margin-left: 32px;
+  display: flex;
+  width: 100%;
+  @include for-size (desktop-up) {
+    margin-left: 0;
+    width: 50%;
+  }
+
+  &__Item2 {
+    margin-top: 50px;
+    @include for-size (desktop-up) {
+      margin-top: 0;
+    }
+
+    & > img {
+      width: 100%;
+      height: auto;
+      margin-right: 0;
+      @include for-size (desktop-up) {
+        margin-right: 32px;
+      }
+    }
+  }
+
+  & > img {
+    width: 100%;
+    height: auto;
+    @include for-size (desktop-up) {
+      width: 33%;
+    }
+  }
+}
+
+.Last {
+  margin-bottom: 50px;
+  @include for-size (desktop-up) {
+    margin-bottom: 100px;
+  }
+}
+
+.Simage {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 32px;
+  margin-left: 32px;
+
+  &__Item {
+    width: 50%;
+    @include for-size (desktop-up) {
+      width: 50%;
+    }
+
+    & > img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__Item2 {
+    margin-right: 32px;
+    margin-left: 32px;
+    margin-top: 50px;
+    @include for-size (desktop-up) {
+      margin-top: 0;
+      width: 33%;
+    }
+
+    & > img {
+      width: 100%;
+      height: auto;
+      @include for-size (desktop-up) {
+        width: 100%;
+      }
+    }
+  }
+
+  & > img {
+    width: 100%;
+    height: auto;
+    @include for-size (desktop-up) {
+      width: 33%;
+    }
+  }
+}
+
+.slide-in {
+  opacity: 0;
+  transform: translateY(-80px);
+  transition: all 1s;
+}
+
+.slide-in.active {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+.MMoodboard {
+  display: flex;
+  flex-wrap: wrap;
+  color: white;
+  margin-left: 32Px;
+  margin-right: 32px;
+  @include for-size (desktop-up) {
+    margin-top: 100px;
+  }
+
+  &__Title {
+    width: 100%;
+    font-size: 20px;
+    font-family: $MainFont;
+    @include for-size (desktop-up) {
+      font-size: 36px;
+    }
+  }
+
+  &__Color {
+    margin-top: 32Px;
+    display: flex;
+    width: 80%;
+    margin-bottom: 0;
+    justify-content: space-between;
+    @include for-size (desktop-up) {
+      margin-top: 50Px;
+      margin-bottom: 50px;
+      width: 60%;
+    }
+  }
+
+  &__1 {
+    width: 40px;
+    height: 40px;
+    background-color: #FAAB63;
+    @include for-size (desktop-up) {
+      height: 80px;
+      width: 80px;
+    }
+  }
+
+  &__2 {
+    width: 40px;
+    height: 40px;
+    background-color: #FFD2AE;
+    @include for-size (desktop-up) {
+      height: 80px;
+      width: 80px;
+    }
+  }
+
+  &__3 {
+    width: 40px;
+    height: 40px;
+    background-color: #FFFFFF;
+    @include for-size (desktop-up) {
+      height: 80px;
+      width: 80px;
+    }
+  }
+
+  &__4 {
+    width: 40px;
+    height: 40px;
+    background-color: #003049;
+    @include for-size (desktop-up) {
+      height: 80px;
+      width: 80px;
+    }
+  }
+
+  &__Typo {
+    margin-top: 32px;
+    width: 50%;
+
+    & > p {
+      font-size: 15px;
+      font-weight: 300;
+      font-family: 'Lato', sans-serif;
+      @include for-size (desktop-up) {
+        font-size: 18px;
+      }
+
+      &:nth-child(9n+2) {
+        font-weight: 400;
+      }
+
+      &:nth-child(9n+3) {
+        font-weight: 700;
+      }
+
+      &:nth-child(9n+4) {
+        font-weight: 900;
+      }
+    }
+  }
+
+  &__Typo2 {
+    margin-top: 32px;
+    @include for-size (desktop-up) {
+      margin-left: -250px;
+    }
+
+    & > p {
+      font-size: 15px;
+      font-family: 'Lobster', cursive;
+      @include for-size (desktop-up) {
+        font-size: 18px;
+      }
+
+      &:nth-child(9n+2) {
+        font-weight: 500;
+      }
+
+      &:nth-child(9n+3) {
+        font-weight: 600;
+      }
+
+      &:nth-child(9n+4) {
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+.MNext {
+  width: 60%;
+  margin-bottom: 50px;
+  margin-left: 32px;
+  margin-top: 50px;
+  @include for-size (desktop-up) {
+    width: 40%;
+    margin-top: 100px;
+    margin-bottom: 50px;
+  }
+
+  &__Item {
+    width: 100%;
+    height: 80px;
+    transition: background-size 1s ease-out;
+    flex-grow: 1;
+    transition: all 0.4s ease-out;
+    text-decoration: none;
+  }
+
+  &__Info {
+    background-image: url("https://i.imgur.com/zxBZzch.png");
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-size: 120%;
+    background-position: 50% 50%;
+    width: 100%;
+    height: 80px;
+    transition: opacity 0.45s ease-in-out;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.4s ease-out;
+    color: #fff;
+    opacity: 1;
+    @include for-size (desktop-up) {
+      height: 150px;
+    }
+
+    &:hover {
+      transition: all 0.4s ease-out;
+      background-size: 122%;
+    }
+
+    & > p {
+      background: rgba(35, 35, 35, 0.7);
+      padding-top: 20px;
+      padding-left: 20px;
+      line-height: 150%;
+      height: 100%;
+      font-family: $MainFont;
+      color: white;
+      font-weight: 500;
+      font-size: 14px;
+      text-decoration: none;
+      @include for-size (desktop-up) {
+        padding-top: 70px;
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+.MrDoodle__FirstImage2 {
+  display: block;
+  @include for-size (desktop-up) {
+    margin-top: 190Px;
+    width: 50%;
+  }
+
+  & > img {
+    margin: 0 auto;
+    width: 50%;
+    height: auto;
+    @include for-size (desktop-up) {
+      width: 40%;
+    }
+  }
+}
+
+.scroll {
+  margin-bottom: 100Px;
+  margin-top: 100Px;
+  height: 500px;
   width: 100%;
   overflow-x: scroll;
   overflow-y: hidden;
@@ -8,34 +439,32 @@
   user-select: none;
   cursor: pointer;
   transition: all 0.2s;
-  will-change: transform;
   position: relative;
   font-size: 0;
   @include for-size (desktop-up) {
-    height: 300px;
-    margin-top: 100px;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 
-.items.active {
+.scroll.active {
   cursor: grabbing;
   cursor: -webkit-grabbing;
 }
 
-.item {
-  width: 200px;
+.scrolls {
+  width: 250px;
   height: calc(100% - 40px);
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  margin-right: 50px;
   align-items: center;
-  justify-content: center;
-  @include for-size (desktop-up) {
-    margin-right: 75px;
-    width: 350px;
-  }
+  font-size: 40px;
+  font-weight: 100;
+  margin-right: 30px;
 
   & > img {
-    width: 100%;
+    width: 65%;
     height: auto;
   }
 }

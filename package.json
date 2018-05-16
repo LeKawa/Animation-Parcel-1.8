@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "start": "parcel src/Simple.html",
+    "start": "parcel src/MrDoodle.html",
     "build": "src/index.js"
   },
   "author": "Hector",

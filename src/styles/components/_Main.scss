@@ -1,0 +1,133 @@
+.items {
+  height: 100%;
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  user-select: none;
+  cursor: pointer;
+  transform: scale(0.99);
+  transition: all 0.2s;
+  will-change: transform;
+  position: relative;
+  font-size: 0;
+  @include for-size (desktop-up) {
+    height: 100%;
+  }
+}
+
+.items.active {
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+  transform: scale(1);
+}
+
+.item {
+  width: 250px;
+  display: inline-flex;
+  transition: all 0.4s ease-out;
+  margin-left: 10%;
+  align-items: center;
+  justify-content: center;
+  @include for-size (desktop-up) {
+    margin-left: 150px;
+    width: 500px;
+  }
+
+  &:hover {
+    border-radius: 32.5%;
+    opacity: 0.7;
+  }
+
+  &:nth-child(9n+1) {
+    height: 100%;
+    background-size: 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-image: url("https://i.imgur.com/OWxpJR2.jpg");
+  }
+
+  &:nth-child(9n+2) {
+    height: 100%;
+    background-size: 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-image: url("https://i.imgur.com/zxBZzch.png");
+  }
+
+  &:nth-child(9n+3) {
+    height: 100%;
+    background-size: 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-image: url("https://i.imgur.com/OWxpJR2.jpg");
+  }
+
+  & > img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.ok {
+  position: absolute;
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  height: 150px;
+  align-items: center;
+  transition: all 0.7s ease-out;
+  font-size: 28px;
+  color: white;
+  z-index: 100;
+  opacity: 1;
+  text-decoration: none;
+  font-family: $MainFont;
+  font-weight: 700;
+  @include for-size (desktop-up) {
+    height: 350px;
+    opacity: 0;
+    width: 500;
+  }
+
+  & > p {
+    line-height: 150%;
+
+    & > span {
+      font-size: 20px;
+    }
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.fixed {
+  display: none;
+  z-index: 100000;
+  height: 60px;
+  position: fixed;
+  width: 100%;
+  @include for-size (desktop-up) {
+    display: block;
+  }
+
+  & > a {
+    position: absolute;
+    right: 32px;
+    top: 32px;
+    text-decoration: none;
+    color: white;
+    font-family: $MainFont;
+    transition: all 0.3s ease-out;
+    font-weight: 700;
+    font-size: 18Px;
+    opacity: 1;
+
+    &:hover {
+      opacity: 0.6;
+
+    }
+  }
+}

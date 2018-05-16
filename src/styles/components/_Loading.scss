@@ -1,0 +1,83 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,900italic,900,700italic,700,500italic,500,400italic,300italic,300,100italic,100);
+
+
+.loading-page {
+  position: absolute;
+  background: #0d0d0d;
+  width: 100%;
+  z-index: 100000;
+  opacity: 1;
+  height: 100%;
+  display: flex;
+  animation-name: zindex;
+  animation-delay: 6s;
+  animation-duration: 1s;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-page .counter {
+  text-align: center;
+  opacity: 0;
+  animation-name: loadingop;
+  animation-duration: 6.5s;
+  animation-timing-function: cubic-bezier(.9,0,1,.67);
+}
+
+.loading-page .counter p {
+  font-size: 14px;
+  font-weight: 100;
+  color: #fff;
+  padding-bottom: 20Px;
+  font-family: $MainFont;
+}
+
+.loading-page .counter h1 {
+  color: white;
+  font-size: 20px;
+  opacity: 0.7;
+  font-family: $MainFont;
+  margin-bottom: 10px;
+  margin-top: -10px;
+}
+
+.loading-page .counter hr {
+  background: #f60d54;
+  border: none;
+  height: 1px;
+}
+
+.loading-page .counter {
+  position: relative;
+  width: 200px;
+}
+
+.loading-page .counter h1.abs {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.loading-page .counter .color {
+  width: 0;
+  overflow: hidden;
+  color: #f60d54;
+}
+@keyframes loadingop {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+@keyframes zindex {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}

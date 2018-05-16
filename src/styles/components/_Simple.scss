@@ -1,7 +1,10 @@
 .Simple {
   display: block;
   background-color: black;
+  animation-name: transi;
+  animation-duration: 1.5s;
   color: white;
+  opacity: 1;
   @include for-size (desktop-up) {
     display: flex;
     width: 100%;
@@ -11,7 +14,7 @@
     padding-top: 100Px;
     margin-left: 32px;
     font-size: 40px;
-    font-family: 'Boogaloo', cursive;
+    font-family: $MainFont;
     @include for-size (desktop-up) {
       font-size: 48px;
       padding-top: 190Px;
@@ -22,7 +25,7 @@
 
   &__Description {
     width: 90%;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: $SecondFont;
     margin-top: 50px;
     font-weight: 400;
     line-height: 200%;
@@ -31,6 +34,42 @@
       width: 80%;
       font-weight: 200;
       font-size: 20px;
+    }
+
+    & > p {
+      &:nth-child(9n+1) {
+        padding-bottom: 20px;
+      }
+
+      &:nth-child(9n+3) {
+        padding-top: 20px;
+        font-size: 16px;
+        line-height: 150%;
+      }
+
+      &:nth-child(9n+4) {
+        padding-top: 20px;
+        font-size: 16px;
+        line-height: 150%;
+      }
+
+      &:nth-child(9n+5) {
+        padding-top: 20px;
+        font-size: 16px;
+        line-height: 150%;
+      }
+
+      &:nth-child(9n+6) {
+        padding-top: 20px;
+        font-size: 16px;
+        line-height: 150%;
+      }
+
+      &:nth-child(9n+7) {
+        padding-top: 20px;
+        font-size: 16px;
+        line-height: 150%;
+      }
     }
   }
 
@@ -51,7 +90,7 @@
 }
 
 .Sdescription {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: $SecondFont;
   font-weight: 500;
   margin-bottom: 50px;
   font-size: 14px;
@@ -74,7 +113,7 @@
 
     & > h3 {
       padding-bottom: 50px;
-      font-family: 'Boogaloo', cursive;
+      font-family: $MainFont;
       font-size: 40px;
       @include for-size (desktop-up) {
         font-size: 48px;
@@ -188,6 +227,7 @@
 .Moodboard {
   display: flex;
   flex-wrap: wrap;
+  color: white;
   margin-left: 32Px;
   margin-right: 32px;
   @include for-size (desktop-up) {
@@ -197,7 +237,7 @@
   &__Title {
     width: 100%;
     font-size: 20px;
-    font-family: 'Boogaloo', cursive;
+    font-family: $MainFont;
     @include for-size (desktop-up) {
       font-size: 36px;
     }
@@ -221,8 +261,8 @@
     height: 40px;
     background-color: #FFD221;
     @include for-size (desktop-up) {
-      height: 60px;
-      width: 60px;
+      height: 80px;
+      width: 80px;
     }
   }
 
@@ -231,8 +271,8 @@
     height: 40px;
     background-color: #FEE64C;
     @include for-size (desktop-up) {
-      height: 60px;
-      width: 60px;
+      height: 80px;
+      width: 80px;
     }
   }
 
@@ -241,8 +281,8 @@
     height: 40px;
     background-color: #FFFFFF;
     @include for-size (desktop-up) {
-      height: 60px;
-      width: 60px;
+      height: 80px;
+      width: 80px;
     }
   }
 
@@ -251,8 +291,8 @@
     height: 40px;
     background-color: #003049;
     @include for-size (desktop-up) {
-      height: 60px;
-      width: 60px;
+      height: 80px;
+      width: 80px;
     }
   }
 
@@ -311,9 +351,13 @@
 
 .Next {
   width: 40%;
-  margin: 0 auto 100px;
+  margin-left: 32px;
+  margin-top: 50px;
+  margin-bottom: 100px;
   @include for-size (desktop-up) {
-    margin: 100px auto 50px;
+    margin-left: 32px;
+    margin-top: 100px;
+    margin-bottom: 100px;
   }
 
   &__Item {
@@ -354,7 +398,7 @@
       padding-left: 20px;
       line-height: 150%;
       height: 100%;
-      font-family: 'Boogaloo', cursive;
+      font-family: $MainFont;
       color: white;
       font-weight: 500;
       font-size: 14px;
@@ -377,5 +421,14 @@
   & > img {
     width: 100%;
     height: auto;
+  }
+}
+@keyframes transi {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }
