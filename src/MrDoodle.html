@@ -13,7 +13,7 @@
   <link rel="icon" href="img/ok.png" />
   <meta property="og:site_name" content="HectorTravaillé">
   <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400i,700" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,900" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
   <title>HectorTravaillé-Portfolio</title>
 </head>
@@ -32,26 +32,26 @@
     </ul>
   </nav>
   <div class="overlay"></div>
-  <section class="MrDoodle">
-    <div class="MrDoodle__Title">
-      <h3>- Mr.Doodle</h3>
-      <div class="MrDoodle__Description">
-        <p>Simpl.e est à la base une solution proposé pour la problématique suivante : Comment améliorer l'expérience utilisateur dans un site autour de la cigarette électronique ?</p>
+  <section class="Inline">
+    <section class="MrDoodle">
+      <div class="MrDoodle__Title">
+        <h3>- Mr.Doodle</h3>
+        <div class="MrDoodle__Description">
+          <p>Simpl.e est à la base une solution proposé pour la problématique suivante : Comment améliorer l'expérience utilisateur dans un site autour de la cigarette électronique ?</p>
+        </div>
       </div>
-    </div>
-    <div class="MrDoodle__FirstImage">
-      <img src="./img/projet2.png" alt="Simple">
-    </div>
-  </section>
-  <section class="MrDoodle">
-    <div class="MrDoodle__Title">
-      <h3>- Simpl.e</h3>
-      <div class="MrDoodle__Description">
-        <p>Simpl.e est à la base une solution proposé pour la problématique suivante : Comment améliorer l'expérience utilisateur dans un site autour de la cigarette électronique ?</p>
+      <div class="MrDoodle__FirstImage">
+        <img src="./img/projet2.png" alt="Simple">
       </div>
-    </div>
-    <div class="MrDoodle__FirstImage2">
-      <div class="scroll">
+    </section>
+    <section class="MrDoodle">
+      <div class="MrDoodle__Title2">
+        <h3>- Kezako</h3>
+        <div class="MrDoodle__Description">
+          <p>Simpl.e est à la base une solution proposé pour la problématique suivante : Comment améliorer l'expérience utilisateur dans un site autour de la cigarette électronique ?</p>
+        </div>
+      </div>
+      <div class="MrDoodle__FirstImage2">
         <div class="scrolls item1">
           <img src="img/13.png" alt="">
         </div>
@@ -62,40 +62,32 @@
           <img src="img/15.png" alt="">
         </div>
       </div>
-  </section>
-  <section class="MMoodboard">
-    <div class="MMoodboard__Title">
-      <p>Choix couleur | typo</p>
-    </div>
-    <div class="MMoodboard__Color">
-      <div class="MMoodboard__1">
+    </section>
+    <section class="MMoodboard">
+      <div class="MMoodboard__Title">
+        <p>Choix couleur | typo</p>
       </div>
-      <div class="MMoodboard__2">
+      <div class="MMoodboard__Color">
+        <div class="MMoodboard__1">
+        </div>
+        <div class="MMoodboard__2">
+        </div>
+        <div class="MMoodboard__3">
+        </div>
+        <div class="MMoodboard__4">
+        </div>
       </div>
-      <div class="MMoodboard__3">
+      <div class="MMoodboard__Typo">
+        <p>Lato x <span class="MMoodboard__Typo2">Lobster</span></p>
       </div>
-      <div class="MMoodboard__4">
-      </div>
-    </div>
-    <div class="Moodboard__Typo">
-      <p>Lato</p>
-      <p>Lato</p>
-      <p>Lato</p>
-      <p>Lato</p>
-    </div>
-    <div class="MMoodboard__Typo2">
-      <p>Lobster</p>
-      <p>Lobster</p>
-      <p>Lobster</p>
-      <p>Lobster</p>
-    </div>
-  </section>
-  <section class="MNext">
-    <a class="MNext__Item" href="MrDoodle.html">
-      <div class="MNext__Info">
-        <p>Projet Suivant <br>Simpl.e </p>
-      </div>
-    </a>
+    </section>
+    <section class="MNext">
+      <a class="MNext__Item" href="Simple.html">
+        <p>Projet suivant</p>
+        <span>
+        </span>
+      </a>
+    </section>
   </section>
   </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -112,72 +104,11 @@
 
 
 
-    function debounce(func, wait = 20, immediate = true) {
-      var timeout;
-      return function() {
-        var context = this,
-          args = arguments;
-        var later = function() {
-          timeout = null;
-          if (!immediate) func.apply(context, args);
-        };
-        var callNow = immediate && !timeout;
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-        if (callNow) func.apply(context, args);
-      };
-    };
-
-
-    const sliderImages = document.querySelectorAll('.slide-in');
-
-    function checkSlide(e) {
-      sliderImages.forEach(sliderImage => {
-        const slidInAt = (window.scrollY + window.innerHeight) - sliderImage.height / 2;
-        const imageBottom = sliderImage.offsetTop + sliderImage.height;
-        const isHalfShown = slidInAt > sliderImage.offsetTop;
-        const isNotScrollPast = window.scrollY < imageBottom;
-        if (isHalfShown && isNotScrollPast) {
-          sliderImage.classList.add('active');
-        } else {
-          sliderImage.classList.remove('avtive');
-        }
-      });
-    }
-
-    window.addEventListener('scroll', checkSlide);
-
-    const slider = document.querySelector('.scroll'); //selecting white div that surrounds everything
-
-    //variables that we'll be updating
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-
-    slider.addEventListener('mousedown', (e) => {
-      isDown = true;
-      slider.classList.add('active');
-      startX = e.pageX - slider.offsetLeft; //finding the place where the user initially clicked
-      scrollLeft = slider.scrollLeft;
-    });
-
-    slider.addEventListener('mouseleave', () => {
-      isDown = false;
-      slider.classList.remove('active');
-    });
-
-    slider.addEventListener('mouseup', () => {
-      isDown = false;
-      slider.classList.remove('active');
-    });
-
-    slider.addEventListener('mousemove', (e) => {
-      if (!isDown) return; //stop the function from running
-      e.preventDefault(); //that will stop selecting the text that is inside or any of the sliding to the left
-      const x = e.pageX - slider.offsetLeft; //where the cursor is when user moved it to left/right
-      const walk = (x - startX) * 2; //for every pixel moved, you're gonna scroll the slider 3 pixels
-      slider.scrollLeft = scrollLeft - walk;
-    });
+    // var e = document.querySelector(".MrDoodle__FirstImage");
+    //
+    // window.addEventListener("scroll", () => (
+    //   e.style.marginLeft = (window.pageYOffset / 2) + "px"
+    // ));
   </script>
 </body>
 

@@ -1,3 +1,14 @@
+.Inline {
+  overflow-x: hidden;
+  white-space: nowrap;
+  height: 100%;
+  overflow-y: scroll;
+  @include for-size (desktop-up) {
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+}
+
 .MrDoodle {
   display: block;
   background-color: black;
@@ -5,18 +16,34 @@
   animation-name: transi;
   animation-duration: 1.5s;
   @include for-size (desktop-up) {
-    display: flex;
-    width: 100%;
+    display: inline-flex;
+    position: relative;
+    align-items: center;
+    height: 50%;
   }
 
   &__Title {
     padding-top: 100Px;
     margin-left: 32px;
-    font-size: 40px;
+    font-size: 36px;
     font-family: $MainFont;
     @include for-size (desktop-up) {
-      font-size: 48px;
-      padding-top: 190Px;
+      font-size: 30px;
+      padding-top: 0Px;
+      width: 50%;
+      display: block;
+    }
+  }
+
+  &__Title2 {
+    padding-top: 100Px;
+    margin-left: 32px;
+    font-size: 36px;
+    font-family: $MainFont;
+    @include for-size (desktop-up) {
+      font-size: 30px;
+      padding-top: 0Px;
+      margin-left: 150px;
       width: 50%;
       display: block;
     }
@@ -25,49 +52,55 @@
   &__Description {
     width: 90%;
     font-family: $SecondFont;
-    margin-top: 50px;
+    margin-top: 40px;
     font-weight: 400;
     line-height: 200%;
     font-size: 14px;
     @include for-size (desktop-up) {
-      width: 80%;
+      width: 65%;
       font-weight: 200;
-      font-size: 20px;
+      font-size: 16px;
     }
 
     & > p {
       &:nth-child(9n+1) {
         padding-bottom: 20px;
+        white-space: pre-wrap;
       }
 
       &:nth-child(9n+3) {
         padding-top: 20px;
         font-size: 16px;
+        white-space: pre-wrap;
         line-height: 150%;
       }
 
       &:nth-child(9n+4) {
+        white-space: pre-wrap;
         padding-top: 20px;
         font-size: 16px;
-        line-height: 150%;
+        line-height: 170%;
       }
 
       &:nth-child(9n+5) {
         padding-top: 20px;
+        white-space: pre-wrap;
         font-size: 16px;
-        line-height: 150%;
+        line-height: 170%;
       }
 
       &:nth-child(9n+6) {
         padding-top: 20px;
+        white-space: pre-wrap;
         font-size: 16px;
-        line-height: 150%;
+        line-height: 170%;
       }
 
       &:nth-child(9n+7) {
         padding-top: 20px;
         font-size: 16px;
-        line-height: 150%;
+        white-space: pre-wrap;
+        line-height: 170%;
       }
     }
   }
@@ -76,9 +109,10 @@
     margin-top: 50Px;
     width: 100%;
     @include for-size (desktop-up) {
-      margin-top: 190Px;
+      margin-top: 0Px;
+      margin-left: 20%;
       margin-right: 32px;
-      width: 50%;
+      width: 30%;
     }
 
     & > img {
@@ -92,7 +126,7 @@
   font-family: $SecondFont;
   font-weight: 500;
   margin-bottom: 50px;
-  font-size: 14px;
+  font-size: 16px;
   margin-top: 50px;
   line-height: 150%;
   width: 80%;
@@ -100,6 +134,7 @@
     margin-bottom: 100Px;
     width: 100%;
     display: flex;
+    position: relative;
   }
 
   &__Display {
@@ -113,9 +148,9 @@
     & > h3 {
       padding-bottom: 50px;
       font-family: $MainFont;
-      font-size: 40px;
+      font-size: 36px;
       @include for-size (desktop-up) {
-        font-size: 48px;
+        font-size: 36px;
       }
     }
   }
@@ -230,7 +265,13 @@
   margin-left: 32Px;
   margin-right: 32px;
   @include for-size (desktop-up) {
-    margin-top: 100px;
+    display: inline-flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    margin-top: 0;
+    margin-left: 80px;
+    position: relative;
+    height: 50%;
   }
 
   &__Title {
@@ -238,7 +279,8 @@
     font-size: 20px;
     font-family: $MainFont;
     @include for-size (desktop-up) {
-      font-size: 36px;
+      font-size: 30px;
+      width: 30%;
     }
   }
 
@@ -249,9 +291,10 @@
     margin-bottom: 0;
     justify-content: space-between;
     @include for-size (desktop-up) {
-      margin-top: 50Px;
-      margin-bottom: 50px;
-      width: 60%;
+      margin-top: 70Px;
+      margin-bottom: 10px;
+      width: 100%;
+      justify-content: flex-start;
     }
   }
 
@@ -260,8 +303,9 @@
     height: 40px;
     background-color: #FAAB63;
     @include for-size (desktop-up) {
-      height: 80px;
-      width: 80px;
+      height: 60px;
+      width: 60px;
+      margin-right: 30px;
     }
   }
 
@@ -270,8 +314,9 @@
     height: 40px;
     background-color: #FFD2AE;
     @include for-size (desktop-up) {
-      height: 80px;
-      width: 80px;
+      height: 60px;
+      width: 60px;
+      margin-right: 30px;
     }
   }
 
@@ -280,8 +325,9 @@
     height: 40px;
     background-color: #FFFFFF;
     @include for-size (desktop-up) {
-      height: 80px;
-      width: 80px;
+      height: 60px;
+      width: 60px;
+      margin-right: 30px;
     }
   }
 
@@ -290,8 +336,9 @@
     height: 40px;
     background-color: #003049;
     @include for-size (desktop-up) {
-      height: 80px;
-      width: 80px;
+      height: 60px;
+      width: 60px;
+      margin-right: 30px;
     }
   }
 
@@ -306,45 +353,14 @@
       @include for-size (desktop-up) {
         font-size: 18px;
       }
-
-      &:nth-child(9n+2) {
-        font-weight: 400;
-      }
-
-      &:nth-child(9n+3) {
-        font-weight: 700;
-      }
-
-      &:nth-child(9n+4) {
-        font-weight: 900;
-      }
     }
   }
 
   &__Typo2 {
-    margin-top: 32px;
+    font-size: 15px;
+    font-family: 'Lobster', cursive;
     @include for-size (desktop-up) {
-      margin-left: -250px;
-    }
-
-    & > p {
-      font-size: 15px;
-      font-family: 'Lobster', cursive;
-      @include for-size (desktop-up) {
-        font-size: 18px;
-      }
-
-      &:nth-child(9n+2) {
-        font-weight: 500;
-      }
-
-      &:nth-child(9n+3) {
-        font-weight: 600;
-      }
-
-      &:nth-child(9n+4) {
-        font-weight: 700;
-      }
+      font-size: 18px;
     }
   }
 }
@@ -352,21 +368,50 @@
 .MNext {
   width: 60%;
   margin-bottom: 50px;
-  margin-left: 32px;
+  margin-left: 0;
   margin-top: 50px;
   @include for-size (desktop-up) {
-    width: 40%;
-    margin-top: 100px;
-    margin-bottom: 50px;
+    width: 30%;
+    margin-left: 32px;
+    align-items: center;
+    height: 70%;
+    display: inline-flex;
+    margin-bottom: 0;
   }
 
   &__Item {
     width: 100%;
-    height: 80px;
+    display: flex;
+    justify-content: flex-end;
     transition: background-size 1s ease-out;
     flex-grow: 1;
+    color: white;
     transition: all 0.4s ease-out;
     text-decoration: none;
+    margin-top: 0Px;
+    @include for-size (desktop-up) {
+      position: relative;
+      padding-right: 50px;
+      color: white;
+    }
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    & > p {
+      font-size: 18px;
+      font-family: $MainFont;
+    }
+
+    & > span {
+      margin-left: 32px;
+      width: 60px;
+      border-bottom: 2px solid #f60d54;
+      @include for-size (desktop-up) {
+        width: 50px;
+      }
+    }
   }
 
   &__Info {
@@ -384,7 +429,7 @@
     color: #fff;
     opacity: 1;
     @include for-size (desktop-up) {
-      height: 150px;
+      height: 200px;
     }
 
     &:hover {
@@ -413,9 +458,11 @@
 
 .MrDoodle__FirstImage2 {
   display: block;
+  margin-right: 0;
   @include for-size (desktop-up) {
-    margin-top: 190Px;
+    margin-top: 0Px;
     width: 50%;
+    margin-right: 32px;
   }
 
   & > img {
@@ -428,43 +475,26 @@
   }
 }
 
-.scroll {
-  margin-bottom: 100Px;
-  margin-top: 100Px;
-  height: 500px;
-  width: 100%;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: nowrap;
-  user-select: none;
-  cursor: pointer;
-  transition: all 0.2s;
-  position: relative;
-  font-size: 0;
-  @include for-size (desktop-up) {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-}
-
-.scroll.active {
-  cursor: grabbing;
-  cursor: -webkit-grabbing;
-}
-
 .scrolls {
-  width: 250px;
-  height: calc(100% - 40px);
+  width: 100px;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
   align-items: center;
   font-size: 40px;
+  height: 100%;
   font-weight: 100;
-  margin-right: 30px;
+  margin-right: 50px;
+  @include for-size (desktop-up) {
+    margin-right: 150px;
+  }
 
   & > img {
-    width: 65%;
+    width: 80%;
     height: auto;
+    @include for-size (desktop-up) {
+      width: 100%;
+      height: auto;
+    }
   }
 }

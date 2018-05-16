@@ -13,10 +13,10 @@
   &__Title {
     padding-top: 100Px;
     margin-left: 32px;
-    font-size: 40px;
+    font-size: 36px;
     font-family: $MainFont;
     @include for-size (desktop-up) {
-      font-size: 48px;
+      font-size: 36px;
       padding-top: 190Px;
       width: 50%;
       display: block;
@@ -31,9 +31,9 @@
     line-height: 200%;
     font-size: 14px;
     @include for-size (desktop-up) {
-      width: 80%;
+      width: 70%;
       font-weight: 200;
-      font-size: 20px;
+      font-size: 18px;
     }
 
     & > p {
@@ -43,32 +43,32 @@
 
       &:nth-child(9n+3) {
         padding-top: 20px;
-        font-size: 16px;
-        line-height: 150%;
+        font-size: 18px;
+        line-height: 170%;
       }
 
       &:nth-child(9n+4) {
         padding-top: 20px;
-        font-size: 16px;
-        line-height: 150%;
+        font-size: 18px;
+        line-height: 170%;
       }
 
       &:nth-child(9n+5) {
         padding-top: 20px;
-        font-size: 16px;
-        line-height: 150%;
+        font-size: 18px;
+        line-height: 170%;
       }
 
       &:nth-child(9n+6) {
         padding-top: 20px;
-        font-size: 16px;
-        line-height: 150%;
+        font-size: 18px;
+        line-height: 170%;
       }
 
       &:nth-child(9n+7) {
         padding-top: 20px;
-        font-size: 16px;
-        line-height: 150%;
+        font-size: 18px;
+        line-height: 170%;
       }
     }
   }
@@ -114,9 +114,9 @@
     & > h3 {
       padding-bottom: 50px;
       font-family: $MainFont;
-      font-size: 40px;
+      font-size: 36px;
       @include for-size (desktop-up) {
-        font-size: 48px;
+        font-size: 36px;
       }
     }
   }
@@ -250,7 +250,7 @@
     margin-bottom: 0;
     justify-content: space-between;
     @include for-size (desktop-up) {
-      margin-top: 50Px;
+      margin-top: 70Px;
       margin-bottom: 50px;
       width: 60%;
     }
