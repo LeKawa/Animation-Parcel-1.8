@@ -370,11 +370,13 @@
   margin-bottom: 50px;
   margin-left: 0;
   margin-top: 50px;
+  padding-left: 32px;
   @include for-size (desktop-up) {
     width: 30%;
     margin-left: 32px;
+    padding-left: 0px;
     align-items: center;
-    height: 70%;
+    height: 60%;
     display: inline-flex;
     margin-bottom: 0;
   }
@@ -496,5 +498,14 @@
       width: 100%;
       height: auto;
     }
+  }
+}
+@keyframes transi {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }

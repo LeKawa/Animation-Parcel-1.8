@@ -1,237 +1,140 @@
-.Simple {
+.Simple__Title2 {
+  width: 10%;
+  font-weight: 200;
+  font-size: 16px;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.Simple__Description {
+  width: 90%;
+  font-family: $SecondFont;
+  margin-top: 40px;
+  font-weight: 400;
+  line-height: 200%;
+  font-size: 14px;
   display: block;
-  background-color: black;
-  animation-name: transi;
-  animation-duration: 1.5s;
-  color: white;
-  opacity: 1;
   @include for-size (desktop-up) {
-    display: flex;
-    width: 100%;
+    width: 350%;
+    display: inline-flex;
+    font-weight: 200;
+    font-size: 16px;
+    padding-top: 0;
+    margin-top: 0;
   }
 
-  &__Title {
-    padding-top: 100Px;
-    margin-left: 32px;
-    font-size: 36px;
-    font-family: $MainFont;
-    @include for-size (desktop-up) {
-      font-size: 36px;
-      padding-top: 190Px;
-      width: 50%;
-      display: block;
+  & > p {
+    padding-left: 0px;
+    &:nth-child(9n+1) {
+      padding-bottom: 20px;
+      white-space: pre-wrap;
+      @include for-size (desktop-up) {
+        padding-left: 62px;
+        padding-top: 0;
+      }
+    }
+
+    &:nth-child(9n+3) {
+      padding-top: 20px;
+      font-size: 16px;
+      white-space: pre-wrap;
+      line-height: 150%;
+      @include for-size (desktop-up) {
+        padding-top: 0;
+      }
+    }
+
+    &:nth-child(9n+4) {
+      white-space: pre-wrap;
+      padding-top: 20px;
+      font-size: 16px;
+      line-height: 170%;
+    }
+
+    &:nth-child(9n+5) {
+      padding-top: 20px;
+      white-space: pre-wrap;
+      font-size: 16px;
+      line-height: 170%;
+      @include for-size (desktop-up) {
+        padding-top: 0;
+      }
+    }
+
+    &:nth-child(9n+6) {
+      padding-top: 20px;
+      white-space: pre-wrap;
+      font-size: 16px;
+      line-height: 170%;
+      @include for-size (desktop-up) {
+        padding-top: 0;
+      }
+    }
+
+    &:nth-child(9n+7) {
+      padding-top: 20px;
+      font-size: 16px;
+      white-space: pre-wrap;
+      @include for-size (desktop-up) {
+        padding-top: 0;
+      }
+      line-height: 170%;
     }
   }
+}
 
-  &__Description {
-    width: 90%;
-    font-family: $SecondFont;
-    margin-top: 50px;
-    font-weight: 400;
-    line-height: 200%;
-    font-size: 14px;
-    @include for-size (desktop-up) {
-      width: 70%;
-      font-weight: 200;
-      font-size: 18px;
-    }
+.Simple__Descriptioni {
+  width: 100%;
+  font-family: $SecondFont;
+  margin-top: 40px;
+  font-weight: 400;
+  line-height: 200%;
+  white-space: normal;
+  font-size: 14px;
+  display: block;
+  @include for-size (desktop-up) {
+    width: 450%;
+    display: inline-flex;
+    font-weight: 200;
+    font-size: 16px;
+    padding-top: 0;
+    margin-top: 0;
 
     & > p {
-      &:nth-child(9n+1) {
-        padding-bottom: 20px;
-      }
-
-      &:nth-child(9n+3) {
-        padding-top: 20px;
-        font-size: 18px;
-        line-height: 170%;
-      }
-
-      &:nth-child(9n+4) {
-        padding-top: 20px;
-        font-size: 18px;
-        line-height: 170%;
-      }
-
-      &:nth-child(9n+5) {
-        padding-top: 20px;
-        font-size: 18px;
-        line-height: 170%;
-      }
-
-      &:nth-child(9n+6) {
-        padding-top: 20px;
-        font-size: 18px;
-        line-height: 170%;
-      }
-
-      &:nth-child(9n+7) {
-        padding-top: 20px;
-        font-size: 18px;
-        line-height: 170%;
-      }
-    }
-  }
-
-  &__FirstImage {
-    margin-top: 50Px;
-    width: 100%;
-    @include for-size (desktop-up) {
-      margin-top: 190Px;
-      margin-right: 32px;
-      width: 50%;
-    }
-
-    & > img {
-      width: 100%;
-      height: auto;
-    }
-  }
-}
-
-.Sdescription {
-  font-family: $SecondFont;
-  font-weight: 500;
-  margin-bottom: 50px;
-  font-size: 14px;
-  margin-top: 50px;
-  line-height: 150%;
-  width: 80%;
-  @include for-size (desktop-up) {
-    margin-bottom: 100Px;
-    width: 100%;
-    display: flex;
-  }
-
-  &__Display {
-    display: block;
-    padding-left: 32px;
-    width: 100%;
-    @include for-size (desktop-up) {
-      width: 50%;
-    }
-
-    & > h3 {
-      padding-bottom: 50px;
-      font-family: $MainFont;
-      font-size: 36px;
+      padding-top: 20px;
+      white-space: pre-wrap;
+      font-size: 16px;
+      line-height: 170%;
       @include for-size (desktop-up) {
-        font-size: 36px;
+        padding-top: 40px;
       }
     }
   }
-  @include for-size (desktop-up) {
-    font-size: 20px;
-    margin-top: 100Px;
-    line-height: 200%;
+}
+@keyframes transi {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }
 
-.Simage {
-  margin-left: 32px;
-  display: flex;
-  width: 100%;
-  @include for-size (desktop-up) {
-    margin-left: 0;
-    width: 50%;
-  }
-
-  &__Item2 {
-    margin-top: 50px;
-    @include for-size (desktop-up) {
-      margin-top: 0;
-    }
-
-    & > img {
-      width: 100%;
-      height: auto;
-      margin-right: 0;
-      @include for-size (desktop-up) {
-        margin-right: 32px;
-      }
-    }
-  }
-
-  & > img {
-    width: 100%;
-    height: auto;
-    @include for-size (desktop-up) {
-      width: 33%;
-    }
-  }
-}
-
-.Last {
-  margin-bottom: 50px;
-  @include for-size (desktop-up) {
-    margin-bottom: 100px;
-  }
-}
-
-.Mimage {
-  display: flex;
-  flex-wrap: wrap;
-  margin-right: 32px;
-  margin-left: 32px;
-
-  &__Item {
-    width: 50%;
-    @include for-size (desktop-up) {
-      width: 50%;
-    }
-
-    & > img {
-      width: 100%;
-      height: auto;
-    }
-  }
-
-  &__Item2 {
-    margin-right: 32px;
-    margin-left: 32px;
-    margin-top: 50px;
-    @include for-size (desktop-up) {
-      margin-top: 0;
-      width: 33%;
-    }
-
-    & > img {
-      width: 100%;
-      height: auto;
-      @include for-size (desktop-up) {
-        width: 100%;
-      }
-    }
-  }
-
-  & > img {
-    width: 100%;
-    height: auto;
-    @include for-size (desktop-up) {
-      width: 33%;
-    }
-  }
-}
-
-.slide-in {
-  opacity: 0;
-  transform: translateY(-80px);
-  transition: all 1s;
-}
-
-.slide-in.active {
-  transform: translateY(0px);
-  opacity: 1;
-}
-
-.Moodboard {
+.MrMoodboard {
   display: flex;
   flex-wrap: wrap;
   color: white;
   margin-left: 32Px;
   margin-right: 32px;
   @include for-size (desktop-up) {
-    margin-top: 100px;
+    display: inline-flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    margin-top: 0;
+    margin-left: 100%;
+    position: relative;
+    height: 50%;
   }
 
   &__Title {
@@ -239,7 +142,8 @@
     font-size: 20px;
     font-family: $MainFont;
     @include for-size (desktop-up) {
-      font-size: 36px;
+      font-size: 30px;
+      width: 30%;
     }
   }
 
@@ -251,28 +155,31 @@
     justify-content: space-between;
     @include for-size (desktop-up) {
       margin-top: 70Px;
-      margin-bottom: 50px;
-      width: 60%;
+      margin-bottom: 10px;
+      width: 100%;
+      justify-content: flex-start;
     }
   }
 
   &__1 {
     width: 40px;
     height: 40px;
-    background-color: #FFD221;
+    background-color: #FAAB63;
     @include for-size (desktop-up) {
-      height: 80px;
-      width: 80px;
+      height: 60px;
+      width: 60px;
+      margin-right: 30px;
     }
   }
 
   &__2 {
     width: 40px;
     height: 40px;
-    background-color: #FEE64C;
+    background-color: #FFD2AE;
     @include for-size (desktop-up) {
-      height: 80px;
-      width: 80px;
+      height: 60px;
+      width: 60px;
+      margin-right: 30px;
     }
   }
 
@@ -281,8 +188,9 @@
     height: 40px;
     background-color: #FFFFFF;
     @include for-size (desktop-up) {
-      height: 80px;
-      width: 80px;
+      height: 60px;
+      width: 60px;
+      margin-right: 30px;
     }
   }
 
@@ -291,8 +199,9 @@
     height: 40px;
     background-color: #003049;
     @include for-size (desktop-up) {
-      height: 80px;
-      width: 80px;
+      height: 60px;
+      width: 60px;
+      margin-right: 30px;
     }
   }
 
@@ -302,133 +211,30 @@
 
     & > p {
       font-size: 15px;
-      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-family: 'Lato', sans-serif;
       @include for-size (desktop-up) {
-        font-size: 18px;
-      }
-
-      &:nth-child(9n+2) {
-        font-weight: 500;
-      }
-
-      &:nth-child(9n+3) {
-        font-weight: 600;
-      }
-
-      &:nth-child(9n+4) {
-        font-weight: 700;
-      }
-    }
-  }
-
-  &__Typo2 {
-    margin-top: 32px;
-    @include for-size (desktop-up) {
-      margin-left: -250px;
-    }
-
-    & > p {
-      font-size: 15px;
-      font-family: 'Montserrat', sans-serif;
-      @include for-size (desktop-up) {
-        font-size: 18px;
-      }
-
-      &:nth-child(9n+2) {
-        font-weight: 500;
-      }
-
-      &:nth-child(9n+3) {
-        font-weight: 600;
-      }
-
-      &:nth-child(9n+4) {
-        font-weight: 700;
-      }
-    }
-  }
-}
-
-.Next {
-  width: 40%;
-  margin-left: 32px;
-  margin-top: 50px;
-  margin-bottom: 100px;
-  @include for-size (desktop-up) {
-    margin-left: 32px;
-    margin-top: 100px;
-    margin-bottom: 100px;
-  }
-
-  &__Item {
-    width: 100%;
-    height: 80px;
-    transition: background-size 1s ease-out;
-    flex-grow: 1;
-    transition: all 0.4s ease-out;
-    text-decoration: none;
-  }
-
-  &__Info {
-    background-image: url("https://i.imgur.com/OWxpJR2.jpg");
-    box-sizing: border-box;
-    background-repeat: no-repeat;
-    background-size: 120%;
-    background-position: 50% 50%;
-    width: 100%;
-    height: 80px;
-    transition: opacity 0.45s ease-in-out;
-    text-decoration: none;
-    font-size: 14px;
-    transition: all 0.4s ease-out;
-    color: #fff;
-    opacity: 1;
-    @include for-size (desktop-up) {
-      height: 150px;
-    }
-
-    &:hover {
-      transition: all 0.4s ease-out;
-      background-size: 122%;
-    }
-
-    & > p {
-      background: rgba(35, 35, 35, 0.7);
-      padding-top: 20px;
-      padding-left: 20px;
-      line-height: 150%;
-      height: 100%;
-      font-family: $MainFont;
-      color: white;
-      font-weight: 500;
-      font-size: 14px;
-      text-decoration: none;
-      @include for-size (desktop-up) {
-        padding-top: 70px;
         font-size: 18px;
       }
     }
   }
 }
 
-.Simple__FirstImage2 {
-  margin: 50Px 32px 50px;
+.MrDoodle__FirstImage3 {
+  display: block;
+  margin-right: 0;
   @include for-size (desktop-up) {
-    margin-top: 190Px;
+    margin-top: 0Px;
     width: 50%;
+    margin-right: 32px;
   }
 
   & > img {
-    width: 100%;
+    margin: 0 auto;
+    width: 50%;
     height: auto;
-  }
-}
-@keyframes transi {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
+    @include for-size (desktop-up) {
+      width: 40%;
+    }
   }
 }

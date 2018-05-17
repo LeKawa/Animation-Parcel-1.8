@@ -42,15 +42,15 @@ table {
 
   ::-webkit-scrollbar {
     width: 5px;
-    height: 3px;
+    height: 10px;
 
 }
 
 ::-webkit-scrollbar-track {
-    background: #000;
+    background: #f60d54;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #fff;
+    background: #000;
 }

@@ -1,14 +1,18 @@
 .About {
   color: white;
   animation-name: transi;
+  overflow-y: hidden;
   animation-duration: 1.5s;
 
   &__Title {
     & > h1 {
-      padding-top: 150px;
+      padding-top: 100px;
       margin-left: 32px;
       font-size: 20px;
       font-family: $MainFont;
+      @include for-size (desktop-up) {
+        padding-top: 150px;
+      }
     }
   }
 
@@ -16,7 +20,7 @@
     font-family: $SecondFont;
     font-size: 16px;
     line-height: 220%;
-    width: 80%;
+    width: 90%;
     padding-left: 32px;
     padding-top: 50Px;
     @include for-size (desktop-up) {
@@ -40,15 +44,26 @@
     @include for-size (desktop-up) {}
 
     & > p {
-      width: 50%;
+      width: 80%;
+      @include for-size (desktop-up) {
+        width: 50%;
+      }
     }
   }
 }
 
 .Contact {
-  padding-top: 150px;
+  padding-top: 100px;
   color: white;
-  width: 50%;
+  padding-left: 32px;
+  margin-left: 0px;
+  width: 100%;
+  @include for-size (desktop-up) {
+    padding-top: 150px;
+    margin-left: 0;
+    width: 50%;
+    padding-left: 0;
+  }
 
   & > h2 {
     font-family: $MainFont;
@@ -56,13 +71,47 @@
 
   &__Reseaux {
     display: block;
-    margin-top: 150Px;
+    margin-top: 100Px;
+    @include for-size (desktop-up) {
+      margin-top: 50Px;
+    }
 
     & > a {
       & > svg {
         width: 35px;
         height: 35px;
         margin-right: 10px;
+        margin-top: -20%;
+        position: absolute;
+        margin-left: 3%;
+        @include for-size (desktop-up) {
+          margin-top: 25%;
+        }
+      }
+
+      &:hover {
+        path {
+          transition: all 0.2s ease-out;
+          fill: #f60d54;
+        }
+      }
+
+      &:nth-child(9n+2) {
+        margin-left: 45%;
+        margin-top: -55%;
+        position: absolute;
+        @include for-size (desktop-up) {
+          margin-left: -5%;
+          position: absolute;
+          margin-top: 15%;
+        }
+
+        &:hover {
+          path {
+            transition: all 0.2s ease-out;
+            fill: #f60d54;
+          }
+        }
       }
     }
   }
@@ -75,5 +124,23 @@
   font-size: 20px;
   @include for-size (desktop-up) {
     display: flex;
+  }
+}
+@keyframes transi {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.about__svg {
+  width: 100%;
+  height: 350px;
+  margin-top: 250px;
+  @include for-size (desktop-up) {
+    margin-top: 0;
   }
 }
