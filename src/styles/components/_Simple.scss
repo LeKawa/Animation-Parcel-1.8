@@ -24,7 +24,8 @@
   }
 
   & > p {
-    padding-left: 0px;
+    padding-left: 0;
+
     &:nth-child(9n+1) {
       padding-bottom: 20px;
       white-space: pre-wrap;
@@ -236,5 +237,20 @@
     @include for-size (desktop-up) {
       width: 40%;
     }
+  }
+}
+
+.Galleries {
+  display: inline-flex;
+  align-items: center;
+  height: 50%;
+  width: 400px;
+
+  &__Image {
+        width: 100%;
+        & > img {
+          width: 100%;
+          height: auto;
+        }
   }
 }

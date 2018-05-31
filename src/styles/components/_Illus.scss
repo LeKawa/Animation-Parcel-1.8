@@ -9,7 +9,7 @@
   }
 }
 
-.MrDoodle {
+.Ui {
   display: block;
   background-color: black;
   color: white;
@@ -44,7 +44,7 @@
       font-size: 30px;
       padding-top: 0Px;
       margin-left: 150px;
-      width: 50%;
+      width: 22%;
       display: block;
     }
   }
@@ -512,18 +512,26 @@
 
 .Galleries {
   display: block;
-  width: 100%;
+  width: 90%;
+  margin-left: 20px;
   margin-top: 100px;
+  height: 1500px;
   margin-right: 0;
   @include for-size (desktop-up) {
     margin-top: 0Px;
     display: inline-flex;
-    width: 50%;
+    width: 100%;
+    width: 3500px;
     margin-right: 32px;
   }
 
   &__Item {
+    margin-top: 80px;
+    margin-right: 100px;
     width: 100%;
+    @include for-size (desktop-up) {
+      margin-top: 0Px;
+    }
 
     & > img {
       width: 100%;
